@@ -10,7 +10,7 @@ const schemaParametres = mongoose.Schema({
 const Parametres = mongoose.model("parametres", schemaParametres);
 
 const schema = Joi.object({
-    information : Joi.string().min(3).max(255).required()
+    information : Joi.string().required()
 });
 
 module.exports.schema = schema;
