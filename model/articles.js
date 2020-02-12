@@ -5,7 +5,7 @@ const Joi = require("@hapi/joi")
 const schemaArticles = mongoose.Schema({
     titre : String,
     contenu : String ,
-    dateCreation : Date,
+    dateCreation : {type : Date , default : Date.now },
     nomAuteur : String,
     categories : [String],
     emailAuteur : String,
@@ -13,13 +13,11 @@ const schemaArticles = mongoose.Schema({
 
 });
 
-
 const Articles = mongoose.model("articles", schemaArticles);
 
 const schema = Joi.object({
     titre : Joi.string().min(3).max(255).required(),
     contenu : Joi.string().min(3).max(255).required(),
-    dateCreation : Joi.date().format('YYYY-MM-DD'),
     nomAuteur : Joi.string().min(3).max(255).required(),
     categories : Joi.array().items(Joi.string()),
     emailAuteur : Joi.string().email().required(),

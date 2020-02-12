@@ -4,16 +4,14 @@ const Joi = require("@hapi/joi")
 
 const schemaCommentaires = mongoose.Schema({
     contenu : String,
-    dateCreation : Date,
+    dateCreation : {type : Date , default : Date.now },
     nomAuteur : String
 });
-
 
 const Commentaires = mongoose.model("commentaires", schemaCommentaires);
 
 const schema = Joi.object({
     contenu : Joi.string().min(3).max(255).required(),
-    dateCreation : Joi.date().format('YYYY-MM-DD').utc(),
     nomAuteur : Joi.string().min(3).max(255).required()
 });
 

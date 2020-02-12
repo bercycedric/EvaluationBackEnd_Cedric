@@ -11,7 +11,6 @@ const schemaUtilisateurs = mongoose.Schema({
     estActif : Boolean
 });
 
-
 const Utilisateurs = mongoose.model("utilisateurs", schemaUtilisateurs);
 
 const schema = Joi.object({

@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 
 const router = express.Router();
 
-
 const { Articles , schema } = require("../model/articles");
-
 
 router.post("/", async function(req, res){
     const body = req.body;
@@ -25,7 +23,6 @@ router.get("/", async function(req, res){
     res.send(resultat);
 });
 
-
 router.get("/:id", async function(req, res){
     const id = req.params.id;
 
@@ -43,7 +40,6 @@ router.get("/:id", async function(req, res){
     
     res.send(resultat);
 });
-
 
 router.delete("/:id", async function(req, res){
     const id = req.params.id ;
@@ -100,7 +96,6 @@ router.put("/:id", async function(req,res){
     res.send(reponse);
 
 });
-
 
 
 module.exports = router;

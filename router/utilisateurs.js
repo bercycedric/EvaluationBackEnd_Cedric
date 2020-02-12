@@ -3,9 +3,7 @@ const mongoose = require("mongoose");
 
 const router = express.Router();
 
-
 const { Utilisateurs , schema } = require("../model/utilisateurs");
-
 
 router.post("/", async function(req, res){
     const body = req.body;

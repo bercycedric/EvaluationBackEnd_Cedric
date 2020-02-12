@@ -18,8 +18,6 @@ app.use("/parametres",routerParametres );
 
 const urlBDD = "mongodb+srv://ifocop_admin:azerty1234@cluster0-62zc5.mongodb.net/test?retryWrites=true&w=majority";
 
-
-
 const optionConnexion = {
     useNewUrlParser : true ,
     useUnifiedTopology: true
@@ -32,7 +30,6 @@ mongoose.connect(urlBDD , optionConnexion)
         .catch(function(err){
             console.log(err);
         })
-
 
 const port = process.env.PORT || 9540 ;
 

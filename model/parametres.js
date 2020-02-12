@@ -6,7 +6,6 @@ const schemaParametres = mongoose.Schema({
     information : String
 });
 
-
 const Parametres = mongoose.model("parametres", schemaParametres);
 
 const schema = Joi.object({
